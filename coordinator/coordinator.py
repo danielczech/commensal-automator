@@ -498,7 +498,7 @@ class Coordinator(object):
         any future new recordings.
         """
         if redis_util.get_recording_by_array(self.red, array):
-            self.alert(f"Recording from {array} to {datadir}")
+            self.alert(f"Recording from {array}")
             # Disable recording; automator will re-enable when appropriate.
             if not redis_util.is_primary_time(self.red, array):
                 redis_util.disable_recording(self.red, array)
